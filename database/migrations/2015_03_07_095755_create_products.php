@@ -12,7 +12,16 @@ class CreateProducts extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('products', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('code', 20);
+            $table->string('name');
+            $table->text('description');
+            $table->bigInteger('price');
+            $table->string('photo');
+            $table->timestamps();
+        });
 	}
 
 	/**
@@ -22,7 +31,7 @@ class CreateProducts extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('products');
 	}
 
 }

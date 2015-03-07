@@ -12,7 +12,17 @@ class CreateWithdrawals extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('withdrawals', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('for');
+            $table->bigInteger('amount');
+            $table->integer('user_detail_id')->unsigned();
+            $table->foreign('user_detail_id')
+                  ->references('id')->on('user_details')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+		    $table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +32,7 @@ class CreateWithdrawals extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('withdrawals');
 	}
 
 }

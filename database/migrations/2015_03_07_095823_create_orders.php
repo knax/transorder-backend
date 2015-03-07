@@ -12,7 +12,22 @@ class CreateOrders extends Migration {
 	 */
 	public function up()
 	{
-		//
+        Schema::create('orders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('amount');
+            $table->boolean('isSent');
+            $table->timestamps();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')
+                  ->references('id')->on('products')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+        });
 	}
 
 	/**
@@ -22,7 +37,7 @@ class CreateOrders extends Migration {
 	 */
 	public function down()
 	{
-		//
+        Schema::drop('orders');
 	}
 
 }
