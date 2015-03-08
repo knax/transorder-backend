@@ -22,9 +22,9 @@ class CreateOrders extends Migration {
                   ->references('id')->on('users')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')
-                  ->references('id')->on('products')
+            $table->integer('color_available_id')->unsigned();
+            $table->foreign('color_available_id')
+                  ->references('id')->on('colors_available')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
         });
