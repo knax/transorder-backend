@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UserSeeder');
         $this->call('OrderSeeder');
         $this->call('DeliveryServiceSeeder');
+        $this->call('ShipmentSeeder');
     }
 
 }
