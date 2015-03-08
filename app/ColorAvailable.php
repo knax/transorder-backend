@@ -22,4 +22,5 @@ class ColorAvailable extends Model {
 
     public $table = 'colors_available';
 
+    public $hidden = ['created_at', 'updated_at', 'product_id'];
 }

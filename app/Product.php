@@ -26,6 +26,8 @@ class Product extends Model {
 
 	public $table = 'products';
 
+    public $hidden = ['created_at', 'updated_at'];
+
     public function colors()
     {
         return $this->hasMany('Transorder\ColorAvailable', 'product_id', 'id');
