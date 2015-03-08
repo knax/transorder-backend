@@ -5,14 +5,14 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Transorder\Product
  *
- * @property integer $id 
- * @property string $code 
- * @property string $name 
- * @property string $description 
- * @property integer $price 
- * @property string $photo 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
+ * @property integer $id
+ * @property string $code
+ * @property string $name
+ * @property string $description
+ * @property integer $price
+ * @property string $photo
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @method static \Illuminate\Database\Query\Builder|\Transorder\Product whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\Product whereCode($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\Product whereName($value)
@@ -26,4 +26,8 @@ class Product extends Model {
 
 	public $table = 'products';
 
+    public function colors()
+    {
+        return $this->hasMany('Transorder\ColorAvailable', 'product_id', 'id');
+    }
 }
