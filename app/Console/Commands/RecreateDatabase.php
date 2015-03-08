@@ -1,4 +1,4 @@
-<?php namespace App\Console\Commands;
+<?php namespace Transorder\Console\Commands;
 
 use Illuminate\Console\Command;
 

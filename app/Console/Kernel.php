@@ -1,4 +1,4 @@
-<?php namespace App\Console;
+<?php namespace Transorder\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -11,8 +11,8 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		'App\Console\Commands\Inspire',
-        'App\Console\Commands\RecreateDatabase',
+		'Transorder\Console\Commands\Inspire',
+        'Transorder\Console\Commands\RecreateDatabase',
 	];
 
 	/**
