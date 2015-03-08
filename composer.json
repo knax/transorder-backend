@@ -3,13 +3,13 @@
 	"description": "Transaction and order.",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*",
-		"barryvdh/laravel-ide-helper": "~2.0"
+		"laravel/framework": "5.0.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
-        "doctrine/dbal": "~2.3"
+        "doctrine/dbal": "~2.3",
+        "barryvdh/laravel-ide-helper": "~2.0"
 	},
 	"autoload": {
 		"classmap": [
