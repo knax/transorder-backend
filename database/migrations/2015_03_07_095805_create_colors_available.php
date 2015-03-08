@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateColorAvailables extends Migration {
+class CreateColorsAvailable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateColorAvailables extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('color_availables', function (Blueprint $table) {
+        Schema::create('colors_available', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('stock');
+            $table->integer('stock')->default(0);
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
                   ->references('id')->on('products')
@@ -32,7 +32,7 @@ class CreateColorAvailables extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('color_availables');
+		Schema::drop('colors_available');
 	}
 
 }

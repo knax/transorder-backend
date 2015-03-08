@@ -17,7 +17,7 @@ class CreateShipments extends Migration {
             $table->string('receiver_name');
             $table->text('receiver_address');
             $table->bigInteger('total_price');
-            $table->text('status');
+            $table->string('status')->default('shipment.status.unpaid');
             $table->integer('delivery_service_id')->unsigned();
             $table->foreign('delivery_service_id')
                   ->references('id')->on('delivery_services')
