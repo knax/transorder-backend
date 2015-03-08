@@ -15,7 +15,7 @@ class CreateOrders extends Migration {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('amount');
-            $table->boolean('isSent');
+            $table->boolean('isSent')->default(false);
             $table->timestamps();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')

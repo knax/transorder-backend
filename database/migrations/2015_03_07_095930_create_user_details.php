@@ -16,10 +16,10 @@ class CreateUserDetails extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->text('address');
-            $table->string('telephone');
-            $table->string('email');
-            $table->string('photo');
-            $table->bigInteger('balance');
+            $table->string('telephone')->default('-');
+            $table->string('email')->default('-');
+            $table->string('photo')->nullable();
+            $table->bigInteger('balance')->default(0);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                   ->references('id')->on('users')
