@@ -16,7 +16,7 @@ class DeliveryServiceSeeder extends Seeder
 
         foreach (range(1, 4) as $index) {
             $deliveryService = [
-                'type' => $faker->word,
+                'name' => $faker->word,
                 'created_at' => $now,
                 'updated_at' => $now
             ];
