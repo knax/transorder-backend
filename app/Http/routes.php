@@ -20,3 +20,6 @@ Route::group(['prefix' => 'product'], function () {
 Route::group(['prefix' => 'order'], function () {
    Route::post('product/{colorId}', ['uses' => 'OrderController@order', 'as' => 'order.product.by_color_id']);
 });
+
+Route::get('login', ['uses' => 'ProductController@index', 'as' => 'auth.login']);
+Route::get('register', ['uses' => 'ProductController@index', 'as' => 'auth.register']);
