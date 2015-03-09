@@ -32,4 +32,9 @@ class Product extends Model {
     {
         return $this->hasMany('Transorder\ColorAvailable', 'product_id', 'id');
     }
+
+    public function price($currency = 'rupiah')
+    {
+        return (new \Transorder\Helpers\Money($this->price))->in($currency);
+    }
 }
