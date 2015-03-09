@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/app.css"/>
 </head>
 <body>
-@include('include.navigation.navigation')
+@include('layout.navigation.main')
 
 @yield('main')
 

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#navbar">
@@ -12,9 +12,11 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Link</a></li>
-            </ul>
+            @if(!Auth::check())
+                @include('layout.navigation.type.guest')
+            @else
+                @include('layout.navigation.type.logged_in')
+            @endif
         </div>
     </div>
 </nav>
