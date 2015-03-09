@@ -3,15 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShipments extends Migration {
+class CreateShipments extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('shipments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('receiver_name');
@@ -23,18 +24,17 @@ class CreateShipments extends Migration {
                   ->references('id')->on('delivery_services')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-		    $table->timestamps();
-		});
-	}
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('shipments');
-	}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('shipments');
+    }
 }

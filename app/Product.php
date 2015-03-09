@@ -22,9 +22,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Transorder\Product whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\Product whereUpdatedAt($value)
  */
-class Product extends Model {
+class Product extends Model
+{
 
-	public $table = 'products';
+    public $table = 'products';
 
     public $hidden = ['created_at', 'updated_at'];
 

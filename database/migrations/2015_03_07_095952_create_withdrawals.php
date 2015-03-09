@@ -3,15 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWithdrawals extends Migration {
+class CreateWithdrawals extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
             $table->text('for');
@@ -21,18 +22,17 @@ class CreateWithdrawals extends Migration {
                   ->references('id')->on('user_details')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-		    $table->timestamps();
-		});
-	}
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('withdrawals');
-	}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('withdrawals');
+    }
 }

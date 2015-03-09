@@ -3,15 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDeposits extends Migration {
+class CreateDeposits extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('deposits', function (Blueprint $table) {
             $table->increments('id');
             $table->string('bank_type');
@@ -25,18 +26,17 @@ class CreateDeposits extends Migration {
                   ->references('id')->on('user_details')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-		    $table->timestamps();
-		});
-	}
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('deposits');
-	}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('deposits');
+    }
 }

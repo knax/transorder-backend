@@ -65,5 +65,4 @@ class RecreateDatabase extends Command
         return [
         ];
     }
-
 }

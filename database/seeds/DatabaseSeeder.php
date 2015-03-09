@@ -21,5 +21,4 @@ class DatabaseSeeder extends Seeder
         $this->call('DeliveryServiceSeeder');
         $this->call('ShipmentSeeder');
     }
-
 }

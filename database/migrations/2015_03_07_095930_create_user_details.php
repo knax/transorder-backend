@@ -3,15 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserDetails extends Migration {
+class CreateUserDetails extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('user_details', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -25,18 +26,17 @@ class CreateUserDetails extends Migration {
                   ->references('id')->on('users')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-		    $table->timestamps();
-		});
-	}
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('user_details');
-	}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('user_details');
+    }
 }

@@ -5,16 +5,16 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Transorder\UserDetail
  *
- * @property integer $id 
- * @property string $name 
- * @property string $address 
- * @property string $telephone 
- * @property string $email 
- * @property string $photo 
- * @property integer $balance 
- * @property integer $user_id 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
+ * @property integer $id
+ * @property string $name
+ * @property string $address
+ * @property string $telephone
+ * @property string $email
+ * @property string $photo
+ * @property integer $balance
+ * @property integer $user_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @method static \Illuminate\Database\Query\Builder|\Transorder\UserDetail whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\UserDetail whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\UserDetail whereAddress($value)
@@ -26,8 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Transorder\UserDetail whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\UserDetail whereUpdatedAt($value)
  */
-class UserDetail extends Model {
+class UserDetail extends Model
+{
 
     public $table = 'user_details';
-
 }

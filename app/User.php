@@ -7,13 +7,13 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 /**
  * Transorder\User
  *
- * @property integer $id 
- * @property string $username 
- * @property string $password 
- * @property string $type 
- * @property string $remember_token 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $type
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @method static \Illuminate\Database\Query\Builder|\Transorder\User whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\User whereUsername($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\User wherePassword($value)
@@ -22,29 +22,29 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
  * @method static \Illuminate\Database\Query\Builder|\Transorder\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Transorder\User whereUpdatedAt($value)
  */
-class User extends Model implements AuthenticatableContract {
+class User extends Model implements AuthenticatableContract
+{
 
-	use Authenticatable;
+    use Authenticatable;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['name', 'username', 'password'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'username', 'password'];
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = ['password', 'remember_token'];
-
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = ['password', 'remember_token'];
 }

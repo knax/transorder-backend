@@ -24,7 +24,7 @@ class ShipmentSeeder extends Seeder
                     'shipment.status.paid',
                     'shipment.status.sent'
                 ]),
-                'delivery_service_id' => rand(1,4),
+                'delivery_service_id' => rand(1, 4),
                 'created_at' => $now,
                 'updated_at' => $now
             ];
@@ -67,7 +67,5 @@ class ShipmentSeeder extends Seeder
         }
 
         DB::table('order_shipment')->insert($orderShipments);
-
     }
-
 }

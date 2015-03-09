@@ -47,7 +47,5 @@ class ProductSeeder extends Seeder
         }
 
         DB::table('colors_available')->insert($colors);
-
     }
-
 }

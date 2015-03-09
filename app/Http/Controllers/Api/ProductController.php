@@ -2,16 +2,15 @@
 
 use Transorder\Http\Requests;
 use Transorder\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use Transorder\Product;
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
-	public function index()
-	{
+    public function index()
+    {
         $products = Product::with('colors')->get()->sortBy('created_at');
-		return \Response::json($products);
-	}
-
+        return \Response::json($products);
+    }
 }

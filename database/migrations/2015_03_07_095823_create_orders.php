@@ -3,15 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrders extends Migration {
+class CreateOrders extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('amount');
@@ -28,16 +29,15 @@ class CreateOrders extends Migration {
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::drop('orders');
-	}
-
+    }
 }

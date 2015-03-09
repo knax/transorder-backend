@@ -25,7 +25,5 @@ class DeliveryServiceSeeder extends Seeder
         }
 
         DB::table('delivery_services')->insert($deliveryServices);
-
     }
-
 }

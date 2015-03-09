@@ -16,8 +16,8 @@ class OrderSeeder extends Seeder
 
         foreach (range(1, 10) as $index) {
             $order = [
-                'color_available_id' => rand(1,20),
-                'amount' => rand(1,10),
+                'color_available_id' => rand(1, 20),
+                'amount' => rand(1, 10),
                 'isSent' => false,
                 'user_id' => $faker->randomDigitNotNull,
                 'created_at' => $now,
@@ -28,7 +28,5 @@ class OrderSeeder extends Seeder
         }
 
         DB::table('orders')->insert($orders);
-
     }
-
 }

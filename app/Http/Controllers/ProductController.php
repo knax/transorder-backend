@@ -7,20 +7,21 @@ use Illuminate\Http\Request;
 use Transorder\Product;
 use \View;
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
     public function index()
     {
         $products = Product::with('colors')->get()->sortBy('created_by');
         return View::make('product.list', compact('products'));
-	}
+    }
 
     public function detail(FormBuilder $formBuilder, $id)
     {
         $product = Product::findOrFail($id);
 
         $choices = [];
-        foreach($product->colors as $color) {
+        foreach ($product->colors as $color) {
             $choices[$color->id] = $color->name;
         }
 
@@ -32,5 +33,4 @@ class ProductController extends Controller {
 
         return View::make('product.detail', compact('product', 'form'));
     }
-
 }

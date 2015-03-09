@@ -12,11 +12,11 @@
 */
 
 
-Route::group(['prefix' => 'product'], function() {
+Route::group(['prefix' => 'product'], function () {
     Route::get('', ['uses' => 'ProductController@index', 'as' => 'product.list']);
     Route::get('{id}', ['uses' => 'ProductController@detail', 'as' => 'product.detail']);
 });
 
-Route::group(['prefix' => 'order'], function() {
+Route::group(['prefix' => 'order'], function () {
    Route::post('product/{colorId}', ['uses' => 'OrderController@order', 'as' => 'order.product.by_color_id']);
 });
