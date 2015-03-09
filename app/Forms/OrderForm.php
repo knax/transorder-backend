@@ -8,7 +8,7 @@ class OrderForm extends Form
     {
         $this->add('color', 'select', ['choices' => $this->getData('colors_available')])
              ->add('amount', 'number')
-             ->add('save', 'submit', [
+             ->add('order', 'submit', [
                  'attr' => ['class' => 'btn btn-primary']
              ]);
     }
