@@ -6230,5 +6230,14 @@ img.media-object {
   height: 64px;
   width: 64px;
 }
+img.product-photo {
+  display: block;
+  height: 200px;
+  width: auto;
+}
+img.product-photo-thumb {
+  height: 256px;
+  width: 256px;
+}
 
 /*# sourceMappingURL=app.css.map */

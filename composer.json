@@ -4,7 +4,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"nesbot/carbon": "~1.16"
+		"nesbot/carbon": "~1.16",
+        "kris/laravel-form-builder": "~1.3"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

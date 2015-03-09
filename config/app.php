@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -194,6 +195,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+        'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder',
 
 	],
 
