@@ -18,8 +18,10 @@ Route::group(['prefix' => 'product'], function () {
 });
 
 Route::group(['prefix' => 'order'], function () {
-   Route::post('product/{colorId}', ['uses' => 'OrderController@order', 'as' => 'order.product.by_color_id']);
+   Route::post('product', ['uses' => 'OrderController@order', 'as' => 'order.product']);
 });
 
-Route::get('login', ['uses' => 'ProductController@index', 'as' => 'auth.login']);
-Route::get('register', ['uses' => 'ProductController@index', 'as' => 'auth.register']);
+Route::get('login', ['uses' => 'AuthController@loginForm', 'as' => 'auth.login.form']);
+Route::post('login', ['uses' => 'AuthController@login', 'as' => 'auth.login']);
+Route::get('register', ['uses' => 'AuthController@registerForm', 'as' => 'auth.register.form']);
+Route::post('register', ['uses' => 'AuthController@register', 'as' => 'auth.register']);

@@ -47,4 +47,17 @@ class User extends Model implements AuthenticatableContract
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function detail()
+    {
+        return $this->hasOne('Transorder\UserDetail', 'user_id', 'id');
+    }
+
+    public static function newUser($userdata)
+    {
+
+    }
 }

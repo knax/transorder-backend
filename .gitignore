@@ -2,6 +2,7 @@
 /node_modules
 .env
 _ide_helper.php
+www.pid
 
 ### Composer template
 composer.phar

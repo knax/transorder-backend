@@ -1,4 +1,4 @@
-<?php namespace Transorder\Forms;
+<?php namespace Transorder\Forms\Order;
 
 use Kris\LaravelFormBuilder\Form;
 

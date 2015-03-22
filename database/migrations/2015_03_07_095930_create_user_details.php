@@ -17,7 +17,7 @@ class CreateUserDetails extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('address');
-            $table->string('telephone')->default('-');
+            $table->string('phone_number')->default('-');
             $table->string('email')->default('-');
             $table->string('photo')->nullable();
             $table->bigInteger('balance')->default(0);

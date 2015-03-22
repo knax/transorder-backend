@@ -5,32 +5,51 @@ use Transorder\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Illuminate\Http\Request;
 use Transorder\Product;
-use \View;
+use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class ProductController extends Controller
 {
 
+    /**
+     * @var \Illuminate\Contracts\View\Factory View
+     */
+    private $view;
+    /**
+     * @var Product
+     */
+    private $product;
+
+    /**
+     * @param \Illuminate\Contracts\View\Factory $view
+     */
+    public function __construct(ViewFactory $view, Product $product){
+        $this->middleware('auth');
+
+        $this->view = $view;
+        $this->product = $product;
+    }
+
     public function index()
     {
         $products = Product::with('colors')->get()->sortBy('created_by');
-        return View::make('product.list', compact('products'));
+        return $this->view->make('product.list', compact('products'));
     }
 
     public function detail(FormBuilder $formBuilder, $id)
     {
-        $product = Product::findOrFail($id);
+        $product = $this->product->with('colors')->findOrFail($id);
 
         $choices = [];
         foreach ($product->colors as $color) {
             $choices[$color->id] = $color->name;
         }
 
-        $form = $formBuilder->create('Transorder\Forms\OrderForm', [
+        $form = $formBuilder->create('Transorder\Forms\Order\OrderForm', [
             'method' => 'POST',
-            'url' => route('order.product.by_color_id', ['colorId' => $product->id]),
+            'url' => route('order.product'),
             'data' => ['colors_available' => $choices]
         ]);
 
-        return View::make('product.detail', compact('product', 'form'));
+        return $this->view->make('product.detail', compact('product', 'form'));
     }
 }

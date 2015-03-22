@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             $userDetail = [
                 'name' => $faker->name,
                 'address' => $faker->address,
-                'telephone' => $faker->phoneNumber,
+                'phone_number' => $faker->phoneNumber,
                 'email' => $faker->email,
                 'photo' => $faker->imageUrl(),
                 'balance' => $faker->randomDigit(6),

@@ -30,4 +30,9 @@ class UserDetail extends Model
 {
 
     public $table = 'user_details';
+
+    public function user()
+    {
+        return $this->belongsTo('User', 'user_id', 'id');
+    }
 }
