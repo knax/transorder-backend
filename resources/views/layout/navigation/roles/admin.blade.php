@@ -1,1 +1,0 @@
-<li><a href="#">{{Lang::get('navigation.admin.product')}}</a></li>

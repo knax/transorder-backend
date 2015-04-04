@@ -129,7 +129,9 @@ return [
         'Illuminate\View\ViewServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\Cors\CorsServiceProvider',
+        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+//        'Barryvdh\Debugbar\ServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -186,7 +188,8 @@ return [
         'Validator'   => 'Illuminate\Support\Facades\Validator',
         'View'        => 'Illuminate\Support\Facades\View',
         'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder',
-        'Debugbar'    => 'Barryvdh\Debugbar\Facade',
+        'JWTAuth'     => 'Tymon\JWTAuth\Facades\JWTAuth'
+//        'Debugbar'    => 'Barryvdh\Debugbar\Facade',
 
     ],
 

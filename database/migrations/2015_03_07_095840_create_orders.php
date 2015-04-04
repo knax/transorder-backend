@@ -23,6 +23,11 @@ class CreateOrders extends Migration
                   ->references('id')->on('users')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
+            $table->integer('delivery_service_id')->unsigned()->nullable();
+            $table->foreign('delivery_service_id')
+                  ->references('id')->on('delivery_services')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
             $table->integer('color_available_id')->unsigned();
             $table->foreign('color_available_id')
                   ->references('id')->on('colors_available')

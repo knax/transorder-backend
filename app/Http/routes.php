@@ -10,18 +10,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// API Routes
 
-
-Route::group(['prefix' => 'product'], function () {
-    Route::get('', ['uses' => 'ProductController@index', 'as' => 'product.list']);
-    Route::get('{id}', ['uses' => 'ProductController@detail', 'as' => 'product.detail']);
+Route::group(['prefix' => 'api'], function () {
+    Route::group(['prefix' => 'v1'], function () {
+        Route::group(['prefix' => 'authentication'], function () {
+            Route::post('login', 'Api\V1\Authentication@login');
+            Route::get('user', 'Api\V1\User@user');
+        });
+        Route::resource('product', 'Api\V1\Product');
+    });
 });
-
-Route::group(['prefix' => 'order'], function () {
-   Route::post('product', ['uses' => 'OrderController@order', 'as' => 'order.product']);
-});
-
-Route::get('login', ['uses' => 'AuthController@loginForm', 'as' => 'auth.login.form']);
-Route::post('login', ['uses' => 'AuthController@login', 'as' => 'auth.login']);
-Route::get('register', ['uses' => 'AuthController@registerForm', 'as' => 'auth.register.form']);
-Route::post('register', ['uses' => 'AuthController@register', 'as' => 'auth.register']);
